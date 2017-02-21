@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6{
     padding: 60px 0px;
 }
 #loader {
+  
   position: absolute;
   left: 50%;
   top: 50%;
@@ -103,9 +104,9 @@ HEADER
 {
 }
 .navbar-default {
-    background-color: transparent;
+    background-color: rgba(64,75,97, 0.9);
     border:0px;
-    padding: 20px 0; 
+    /*padding: 20px 0; */
     transition: all 0.3s;
 }
 
@@ -117,6 +118,7 @@ HEADER
 .top-nav-collapse {
     padding: 0; 
     background: rgba(64,75,97, 0.9);
+    
 }
 
 .logo-dec
@@ -840,4 +842,8 @@ body{
     100% {
         opacity: 1;
     }
+}
+
+.body {
+    margin-top: 70px;
 }
