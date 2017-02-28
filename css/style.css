@@ -97,7 +97,7 @@ HEADER
 }
 .bg-color
 {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     min-height: 650px;
 }
 #main-header
@@ -846,11 +846,4 @@ body{
 
 .body {
     margin-top: 70px;
-    height: 100%;
-}
-
-
-.specialColor { 
-    /* Whatever color  you want */
-    background-color: #82caff;
 }
