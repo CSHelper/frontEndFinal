@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS Helper</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+   
+		
+	<!-- script references -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  </head>
+  <!-- header -->
+<div class="loader"></div>
+    <div id="myDiv">
+    <!--HEADER-->
+    <div class="">
+      <div class="">
+        <header id="main-header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">CS<span class="logo-dec">Helper</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li class=""><a href="#feature">About</a></li>
+                <li class=""><a href="teacher.html">Teacher</a></li>
+                <li class=""><a href="#portfolio">Tutor</a></li>
+                <li class=""><a href="#testimonial">Student</a></li>
+                <li class=""><a href="#blog">Statistics</a></li>
+                <li class=""><a href="#contact">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </header>
+<!-- /Header -->
+
+<!-- Main -->
+
+
+<div class="container-fluid body">
+    <div class="row">       
+        <div class="col-sm-3"> <!-- Define Problem -->
+			<a href="#"><strong><i class="glyphicon glyphicon-list"></i> Define Problem</strong></a>
+
+			<hr>
+			<div class="row">       
+				<div class="col-sm-10">
+				<div class="form-group">
+							<label>Assign Problem to Students: 
+								</br>
+								<span style="color:#999999">(hold ctrl to select more than one)</span>
+							</label>
+							</br>
+							</br>
+							<select style="height: 154px" multiple class="form-control selectStudents" id="selectStudents">
+								<option>Dustin</option>
+								<option>Sunday</option>
+								<option>Eric</option>
+								<option>Ryan</option>
+								<option>Frank</option>
+								<option>Tommy</option>
+								<option>Dede</option>
+								<option>Scott</option>
+								<option>Kyle</option>
+								<option>Nick</option>
+								<option>Carolina</option>
+								<option>Tyler</option>
+								<option>Cody</option>
+								<option>Matt</option>
+							</select>
+				</div>
+				<hr>
+				<br/>
+					<div class="form-group">
+						<label>Select Language:</label>
+						<select class="form-control" id="language">
+							<option>Java</option>
+							<option>C++</option>
+							<option>C</option>
+							<option>Python</option>
+						</select>
+						</br>
+						</br>
+						</br>
+						<label>Select Section:</label> <!--Assuming java basics selected-->
+						<select class="form-control" id="section">
+							<option>Java Basics</option>
+							<option>Conditional Statements</option>
+							<option>Loops</option>
+						</select>
+						</br>
+						</br>
+						</br>
+						<label>Select Problem:</label> <!--Assuming java basics selected-->
+						<select class="form-control" id="topic">
+							<option>Data Types</option>
+							<option>If Statements</option>
+							<option>Output</option>
+						</select>
+						
+						<hr>
+
+						
+					</div>
+				</div>
+			</div>
+        </div>
+        
+	
+        <div class="col-sm-6" > <!-- Problem Creation Column -->
+			<a href="#"><strong><i class="glyphicon glyphicon-education"></i> Problem Creation</strong></a>
+
+			<hr>
+			
+			
+			<div class="form-group">
+				<label>Problem Name:</label>
+				<input type="text" class="form-control" id="problemName">
+				</br>
+			
+				<label for="comment">Description:</label>
+				<textarea class="form-control" rows="5" id="comment"></textarea>
+			</div>
+			<hr>
+			
+			<div>
+				<div style="float:left">
+					<button onclick="addInputDiv()" class="btn btn-primary">Add an Input</button>
+				</div>
+				<div style="float:right">
+					<button onclick="removeInputDiv()" class="btn btn-danger">Remove an Input</button>
+				</div>
+			</div>
+			</br>
+			</br>
+			
+			<div id="problemInputsDiv"></div>
+
+			
+
+			<div class="row">       
+				<div class="col-sm-6">
+					<label>Output:</label>
+					<div class="form-group">
+						<select class="form-control" id="datatype{{unique}}">
+							<option>int</option>
+							<option>double</option>
+							<option>float</option>
+							<option>char</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<hr>
+			</br>
+			
+			<div>
+				<div style="float:left">
+					<button onclick="addHintDiv()" class="btn btn-primary">Add a Hint</button>
+				</div>
+				<div style="float:right">
+					<button onclick="removeHintDiv()" class="btn btn-danger">Remove a Hint</button>
+				</div>
+			</div>
+			</br>
+			</br>
+
+    		<div id="hintsDiv"></div>
+				
+			</br>
+        </div>
+		
+		
+		
+		<div class="col-sm-3">  <!-- Tests Column -->
+			<a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Test Creation</strong></a>
+			<hr>
+			
+			<div>
+				<label for="comment">Tests:</label>
+				</br>
+				<div style="float:left">
+					<button onclick="modalInputs()" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add a Test</button>
+				</div>
+				<div style="float:right">
+					<button onclick="removeTestDiv()" class="btn btn-danger">Remove a Test</button>
+				</div>
+			</div>
+			</br>
+			</br>
+			
+			<div id="testsDiv"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header modalHeader">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Add Test Case</h4>
+			</div>
+			<form>	
+				<div class="modal-body">
+					<p>Inputs</p>
+					<div id="modalInputs"> </div>
+					<hr>
+					
+					<p>Output</p>
+					<input type="text" class="form-control" id="modalOutput" required>
+				</div>
+				<div class="modal-footer">
+					<button onclick="addTestDiv()" type="button" class="btn btn-info" id="btnCreateTest" data-dismiss="modal">Create</button>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- /Main -->
+
+<footer style="background-color:white" class="text-center"> </footer>
+
+
+
+<script>
+window.onload = function(){ //On page load
+  addInputDiv();//Create one Input
+  addHintDiv();//Create one Hint
+};
+//problemInputsDiv
+	let templateInput = `<div id="input{{unique}}" class="input">	
+							<div>
+								<label for="usr">Input {{unique}}</label>
+								</br>
+								<div class="row">
+									<div class="col-sm-6">
+										<label for="usr">Variable Name:</label>
+									</div>
+									<div class="col-sm-6">
+										<label for="usr">Data Type:</label>
+									</div>
+								</div>
+								<div class="row">	
+									<div class="col-sm-6">
+										<div class="form-group">
+										  <input type="text" class="form-control" id="variableName{{unique}}">
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<select class="form-control" id="datatype{{unique}}">
+												<option>int</option>
+												<option>double</option>
+												<option>float</option>
+												<option>char</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<hr>
+						</div>`;
+	let id = 0;
+	function addInputDiv() {
+		id++
+		$( "#problemInputsDiv" ).append( templateInput.replace('{{unique}}', id)
+						.replace('{{unique}}', id)
+						.replace('{{unique}}', id)
+						.replace('{{unique}}', id) );
+	}
+		
+	function removeInputDiv() {
+		if (id > 1)
+		{
+			document.getElementById( 'input'+id ).remove();
+			id--
+		}
+	}
+//end problemInputsDiv
+//hintsDiv
+	let templateHint = `<div id="hint{{unique}}">	
+							<div class="col-sm-2">
+								<label for="usr">Hint {{unique}}:</label>
+							</div>
+							<div class="col-sm-10">
+								<div class="form-group">
+								  <input type="text" class="form-control" id="hintText{{unique}}">
+								</div>
+							</div>
+						</div>`;
+	let idHint = 0;
+	function addHintDiv() {
+		idHint++
+		$( "#hintsDiv" ).append( templateHint.replace('{{unique}}', idHint)
+						.replace('{{unique}}', idHint)
+						.replace('{{unique}}', idHint) );
+	}
+		
+	function removeHintDiv() {
+		if (idHint > 1)
+		{
+			document.getElementById( 'hint'+idHint ).remove();
+			idHint--
+		}
+	}
+//end hintsDiv
+//testsDiv
+	let templateTest = `<div class="panel panel-default test_accordion_title" id="test{{unique}}"> <!-- Section Panel -->
+							<div class="panel-heading" id="test_accordion_title" role="tab" id="">
+								<h3 class="panel-title">
+									<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{unique}}" aria-expanded="true" aria-controls="collapse{{unique}}">
+										<i class=" glyphicon glyphicon-chevron-down"></i>&ensp;Test {{unique}}
+									</a>
+								</h3>
+							</div>
+							<div id="collapse{{unique}}" class="panel-collapse collapse test_accordion_body" role="tabpanel" aria-labelledby="headingOne"> <!-- Topic Panel -->
+								<div class="row">
+									<div class="col-sm-1"></div>
+									<div class="col-sm-2">
+										<label>Input:</label>
+									</div>
+									<div class="col-sm-8" id="divTestInputs">
+										<label id="lblInput"></label>
+									</div>
+									<div class="col-sm-1"></div>
+								</div>
+								</br>
+								<div class="row">      
+									<div class="col-sm-1"></div>
+									<div class="col-sm-2">
+										<label>Output:</label>
+									</div>
+									<div class="col-sm-8">
+										<p id="lblOutput{{unique}}"></p>
+									</div>
+									<div class="col-sm-1"></div>
+								</div>
+							</div>
+						</div>`;
+	let idTest = 0;
+	function addTestDiv() {		
+		idTest++
+		$( "#testsDiv" ).append( templateTest.replace('{{unique}}', idTest)
+						.replace('{{unique}}', idTest)
+						.replace('{{unique}}', idTest)
+						.replace('{{unique}}', idTest)
+						.replace('{{unique}}', idTest)
+						.replace('{{unique}}', idTest) );
+		populateTestDiv();
+	}
+		
+	function removeTestDiv() {
+		document.getElementById( 'test'+idTest ).remove();
+		idTest--
+	}
+//end testsDiv
+//modalInputs
+	let templateModalInput = `<input type="number" class="form-control" id="modalInput{{unique}}" required>
+							</br>`;
+	let modalInputCount = 0;
+	function modalInputs() {
+		while (id > modalInputCount)
+		{
+			modalInputCount++
+			$( "#modalInputs" ).append( templateModalInput.replace('{{unique}}', modalInputCount));
+		}
+	}
+//end modalInputs
+let counter = 1;
+	function populateTestDiv() {
+		/*while (modalInputCount >= counter)
+		{
+			var value = $('modalInput'+counter ).val();
+			$('test'+idTest).html(value);
+			$('#myModal').modal('hide');
+			counter++
+		}*/
+		
+		var valueOutput = document.getElementById('modalOutput').value; //Get Modal Output
+		document.getElementById('lblOutput'+idTest).innerHTML = valueOutput; //Get Test Output
+		
+		
+		$('#myModal').on('hidden.bs.modal', function () { //Clear Modal
+			$(this).find('form').trigger('reset');
+		})
+	}
+</script>
+		
+</body>
+</html>

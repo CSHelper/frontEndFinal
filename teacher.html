@@ -35,9 +35,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#main-header">Home</a></li>
+                <li class=""><a href="index.html">Home</a></li>
                 <li class=""><a href="#feature">About</a></li>
-                <li class=""><a href="#service">Teacher</a></li>
+                <li class="active"><a href="teacher.html">Teacher</a></li>
                 <li class=""><a href="#portfolio">Tutor</a></li>
                 <li class=""><a href="#testimonial">Student</a></li>
                 <li class=""><a href="#blog">Statistics</a></li>
@@ -60,23 +60,25 @@
             <hr>
 
             <ul class="nav nav-stacked">
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Student List<i class="glyphicon glyphicon-chevron-down"></i></a>
-                    <ul class="nav nav-stacked collapse in" id="userMenu">
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Student List<i class="glyphicon glyphicon-chevron-right"></i></a>
+                    <ul class="nav nav-stacked collapse" id="userMenu">
                         <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Sunny Aroh</a></li>
                         <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
-            <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Frank Sanchez</a></li>
-            <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Tommy Shay</a></li>
-            <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Nghia Tran</a></li>
+                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Frank Sanchez</a></li>
+                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Tommy Shay</a></li>
+                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Nghia Tran</a></li>
                     </ul>
                 </li>
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
 
-                    <ul class="nav nav-stacked collapse" id="menu2">
+                    <ul class="nav nav-stacked collapse glyphicon-chevron-down" id="menu2">
                         <li><a href="#">Information &amp; Statistics</a>
                         </li>
                         <li><a href="#">Class Statistics</a>
                         </li>
                         <li><a href="#">Alerts</a>
+                        </li>
+                        <li><a href="problemCreation.html">Problem Creation</a>
                         </li>
                     </ul>
                 </li>
@@ -89,8 +91,41 @@
       <a href="#"><strong><i class="glyphicon glyphicon-list"></i> Choose a Problem</strong></a>
 
             <hr>
-    
-          <div class="panel panel-default sectionCollapse"> <!-- Section Panel -->
+          <div class="form-group" style="background-color: #fff;">
+            <label>Select Language:</label>
+            <select class="form-control" id="language">
+              <option class="specialColor">Java</option>
+              <option>C++</option>
+              <option>C</option>
+              <option>Python</option>
+            </select>
+            </br>
+            </br>
+            </br>
+            <label>Select Section:</label> <!--Assuming java basics selected-->
+            <select class="form-control" id="section">
+              <option>Java Basics</option>
+              <option>Conditional Statements</option>
+              <option>Loops</option>
+            </select>
+            </br>
+            </br>
+            </br>
+            <label>Select Problem:</label> <!--Assuming java basics selected-->
+            <select class="form-control" id="topic">
+              <option>Data Types</option>
+              <option>If Statements</option>
+              <option>Output</option>
+            </select>
+            
+            <hr>
+
+            
+          </div>
+
+
+          <!--
+          <div class="panel panel-default sectionCollapse"> <!-- Section Panel 
               <div class="panel-heading sectionCollapse" role="tab" id="sectionCollapse">
                   <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
@@ -101,7 +136,7 @@
 
                   </h4>
               </div>
-            <div id="collapse1" class="panel-collapse collapse topicCollapse" role="tabpanel" aria-labelledby="headingOne"> <!-- Topic Panel -->
+            <div id="collapse1" class="panel-collapse collapse topicCollapse" role="tabpanel" aria-labelledby="headingOne"> <!-- Topic Panel
 
         
           <h4 class="panel-title">
@@ -113,7 +148,7 @@
             </a>
             
           </h4>
-          <div id="collapse2" class="panel-collapse collapse problemCollapse" role="tabpanel" aria-labelledby="headingOne"> <!-- Problem Panel -->
+          <div id="collapse2" class="panel-collapse collapse problemCollapse" role="tabpanel" aria-labelledby="headingOne"> <!-- Problem Panel 
             
             
             <h4 class="panel-title">
@@ -179,11 +214,14 @@
                     </h4>
                 </div>
               </div>
-          </div>
+          </div>-->
           
         </div>
         
-        <div class="col-sm-7"> <!-- Problem / Attempt Column -->
+
+
+
+      <div class="col-sm-7"> <!-- Problem / Attempt Column -->
       <a href="#"><strong><i class="glyphicon glyphicon-education"></i> Problem and Student Attempts</strong></a>
 
             <hr>
@@ -198,7 +236,7 @@
       </br>
       </br>
     
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"> <!-- Attempt 1 -->
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" > <!-- Attempt 1 -->
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
@@ -252,6 +290,7 @@
       
         </div>
     </div>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
 
       <!-- END BODY -->  

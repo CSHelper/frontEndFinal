@@ -580,8 +580,7 @@ contact
 {
     background-color: transparent;
     border-radius: 0px;
-    color: #be9e21 !important;
-    border-color: #be9e21;
+    background-color:#fff;
 }
 .form-control:focus {
     border-color: #be9e21;
@@ -641,6 +640,7 @@ contact
 #footer
 {
     padding: 20px 0px;
+    bottom: 0px;
 }
 .scrollToTop {
     position: fixed;
@@ -846,4 +846,11 @@ body{
 
 .body {
     margin-top: 70px;
+    height: 100%;
+}
+
+
+.specialColor { 
+    /* Whatever color  you want */
+    background-color: #82caff;
 }
