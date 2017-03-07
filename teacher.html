@@ -120,7 +120,7 @@
             
             <hr>
 
-            
+            <button id="showProblems"> go </button>
           </div>
 
 
@@ -221,7 +221,7 @@
 
 
 
-      <div class="col-sm-7"> <!-- Problem / Attempt Column -->
+      <div class="col-sm-7" id="attemptsDiv" style="display:none;"> <!-- Problem / Attempt Column -->
       <a href="#"><strong><i class="glyphicon glyphicon-education"></i> Problem and Student Attempts</strong></a>
 
             <hr>
@@ -333,6 +333,20 @@
 
           });
       });
+
+      var button = document.getElementById('showProblems');
+      button.onclick = function() 
+      {
+          var div = document.getElementById('attemptsDiv');
+          if (div.style.display !== 'none') 
+          {
+              div.style.display = 'none';
+          }
+          else 
+          {
+              div.style.display = 'block';
+          }
+      };
     </script>
     
   </body>
