@@ -64,15 +64,15 @@
                     <ul class="nav nav-stacked collapse" id="userMenu">
                         <li class="active student"> <a href="#" data-toggle="collapse" data-target="#userOptions"> <span style="color:white">-</span><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
                             <ul class="nav nav-stacked collapse" id="userOptions">
-                                <li class="active"> <a href="#"> <span style="color:white">---</span> Problem Attempts</a></li>
-                                <li class="active"> <a href="#"> <span style="color:white">---</span> Statistics</a></li>
+                                <li class="active" id="problemAttempts"> <a href="#"> <span style="color:white">---</span> Problem Attempts</a></li>
+                                <li class="active" id="studentStats"> <a href="#"> <span style="color:white">---</span> Statistics</a></li>
                             </ul>
                     </ul>
                 </li>
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
 
                     <ul class="nav nav-stacked collapse glyphicon-chevron-down" id="menu2">
-                        <li><a href="#"> <span style="color:white">-</span> Class Statistics</a>
+                        <li id="classStatsButton"><a href="#"> <span style="color:white">-</span> Class Statistics</a>
                         </li>
                         <li><a href="#"> <span style="color:white">-</span> Alerts</a>
                         </li>
@@ -84,8 +84,20 @@
 
             <hr>
         </div>
+
+        <div id="statsDivs" style="display:none;">
+          <h1>
+          STUDENT STATS HOMIE
+          </h1>
+        </div>
+
+        <div id="classStats" style="display:none;">
+          <h1>
+          CLASS STATS HOMIE
+          </h1>
+        </div>
         
-        <div class="col-sm-3"> <!-- Section - Topic - Problem Column (Accordion) -->
+        <div class="col-sm-3 problemsDivs" style="display:none;"> <!-- Section - Topic - Problem Column (Accordion) -->
       <a href="#"><strong><i class="glyphicon glyphicon-list"></i> Choose a Problem</strong></a>
 
             <hr>
@@ -215,11 +227,9 @@
           </div>-->
           
         </div>
-        
 
 
-
-      <div class="col-sm-7" id="attemptsDiv" style="display:none;"> <!-- Problem / Attempt Column -->
+      <div class="col-sm-7 problemsDivs" style="display:none;"> <!-- Problem / Attempt Column -->
       <a href="#"><strong><i class="glyphicon glyphicon-education"></i> Problem and Student Attempts</strong></a>
 
             <hr>
@@ -333,17 +343,51 @@
           });
       });
 
-      var button = document.getElementById('showProblems');
-      button.onclick = function() 
+      //shows the student attempt divs and removes the other divs
+      var studentAtts = document.getElementById('problemAttempts');
+      studentAtts.onclick = function() 
       {
-          var div = document.getElementById('attemptsDiv');
-          if (div.style.display !== 'none') 
+          var atts = document.getElementsByClassName("problemsDivs");
+          var studStats = document.getElementById('statsDivs');
+          var classStats = document.getElementById('classStats');
+          if (atts[0].style.display == 'none') 
           {
-              div.style.display = 'none';
+              atts[0].style.display = 'block';
+              atts[1].style.display = 'block';
+              studStats.style.display = 'none';
+              classStats.style.display = 'none';
           }
-          else 
+      };
+
+      //shows the student stats divs and removes the other divs
+      var studStatsButton = document.getElementById('studentStats');
+      studStatsButton.onclick = function() 
+      {
+          var studStats = document.getElementById('statsDivs');
+          var atts = document.getElementsByClassName("problemsDivs");
+          var classStats = document.getElementById('classStats');
+          if (studStats.style.display == 'none')
           {
-              div.style.display = 'block';
+              studStats.style.display = 'block';
+              atts[0].style.display = 'none';
+              atts[1].style.display = 'none';
+              classStats.style.display = 'none';
+          }
+      };
+
+      //shows full class stats and removes other divs
+      var fullStats = document.getElementById("classStatsButton");
+      fullStats.onclick = function()
+      {
+          var studStats = document.getElementById('statsDivs');
+          var atts = document.getElementsByClassName("problemsDivs");
+          var classStats = document.getElementById('classStats');
+          if(classStats.style.display == 'none')
+          {
+            classStats.style.display = 'block';
+            studStats.style.display = 'none';
+            atts[0].style.display = 'none';
+            atts[1].style.display = 'none';
           }
       };
     </script>
