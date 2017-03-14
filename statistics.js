@@ -1,4 +1,4 @@
-Highcharts.chart('container', {
+Highcharts.chart('time-graph', {
     chart: {
         type: 'area'
     },
@@ -9,7 +9,7 @@ Highcharts.chart('container', {
         text: ''
     },
     xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         tickmarkPlacement: 'on',
         title: {
             enabled: false
@@ -41,16 +41,80 @@ Highcharts.chart('container', {
         }
     },
     series: [{
-        name: 'Attempted',
-        data: [0, 0, 0, 0, 0, 0, 0]
+        name: 'In Progress',
+        data: [3, 2, 1, 1, 2, 3, 0, 0, 2, 1, 0, 1]
     }, {
         name: 'Failed',
-        data: [3, 2, 1, 1, 2, 3, 0]
+        data: [1, 2, 2, 4, 7, 8, 9, 7, 0, 2, 5, 5]
     }, {
         name: 'Completed',
-        data: [1, 2, 2, 4, 7, 8, 10]
-    }, {
-        name: 'In Progress',
-        data: [1, 2, 3, 3, 1, 0, 1]
+        data: [1, 2, 3, 3, 1, 0, 1, 1, 0, 0, 3, 3]
     }]
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Build the chart
+    Highcharts.chart('pie-chart', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'In Progress',
+                y: 60
+            }, {
+                name: 'Failed',
+                y: 10,
+                sliced: true,
+                selected: true
+            }, {
+                name: 'Completed',
+                y: 30
+            }]
+        }]
+    });
+
+	
+	
+	
+	
+	
+	
