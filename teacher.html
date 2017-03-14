@@ -62,23 +62,21 @@
             <ul class="nav nav-stacked">
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Student List<i class="glyphicon glyphicon-chevron-right"></i></a>
                     <ul class="nav nav-stacked collapse" id="userMenu">
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Sunny Aroh</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Frank Sanchez</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Tommy Shay</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Nghia Tran</a></li>
+                        <li class="active student"> <a href="#" data-toggle="collapse" data-target="#userOptions"> <span style="color:white">-</span><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
+                            <ul class="nav nav-stacked collapse" id="userOptions">
+                                <li class="active"> <a href="#"> <span style="color:white">---</span> Problem Attempts</a></li>
+                                <li class="active"> <a href="#"> <span style="color:white">---</span> Statistics</a></li>
+                            </ul>
                     </ul>
                 </li>
                 <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
 
                     <ul class="nav nav-stacked collapse glyphicon-chevron-down" id="menu2">
-                        <li><a href="#">Information &amp; Statistics</a>
+                        <li><a href="#"> <span style="color:white">-</span> Class Statistics</a>
                         </li>
-                        <li><a href="#">Class Statistics</a>
+                        <li><a href="#"> <span style="color:white">-</span> Alerts</a>
                         </li>
-                        <li><a href="#">Alerts</a>
-                        </li>
-                        <li><a href="problemCreation.html">Problem Creation</a>
+                        <li><a href="problemCreation.html"> <span style="color:white">-</span> Problem Creation</a>
                         </li>
                     </ul>
                 </li>
@@ -319,6 +317,7 @@
     <script src="contactform/contactform.js"></script>
     <script src="jquery.js"></script>
     <script src="typed.js"></script>
+    <script src="teacher.js"></script>
     <script>
       $(function(){
           $("#typewriter").typed({
