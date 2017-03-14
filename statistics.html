@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
 
 <div class="loader"></div>
     <div id="myDiv">
@@ -54,78 +55,25 @@
             <!-- Left column -->
             <a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Menu</strong></a>
 
-            <hr>
-
-            <ul class="nav nav-stacked">
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Student List<i class="glyphicon glyphicon-chevron-down"></i></a>
-                    <ul class="nav nav-stacked collapse in" id="userMenu">
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Sunny Aroh</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
-            <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Frank Sanchez</a></li>
-            <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Tommy Shay</a></li>
-            <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Nghia Tran</a></li>
-                    </ul>
-                </li>
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
-
-                    <ul class="nav nav-stacked collapse" id="menu2">
-                        <li><a href="#">Information &amp; Statistics</a>
-                        </li>
-                        <li><a href="#">Class Statistics</a>
-                        </li>
-                        <li><a href="#">Alerts</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-
-            <hr>
+            </br>
+            </br>
+            Removed
+           
         </div>
         <!-- /col-3 -->
         <div class="col-sm-9">
 
-            <!-- column 2 -->
-            <!-- <ul class="list-inline pull-right">
-                <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
-                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-comment"></i><span class="count">3</span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">1. Is there a way..</a></li>
-                        <li><a href="#">2. Hello, admin. I would..</a></li>
-                        <li><a href="#"><strong>All messages</strong></a></li>
-                    </ul>
-                </li>
-                <li><a href="#"><i class="glyphicon glyphicon-user"></i></a></li>
-                <li><a title="Add Widget" data-toggle="modal" href="#addWidgetModal"><span class="glyphicon glyphicon-plus-sign"></span> Add Widget</a></li>
-            </ul> -->
             <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Student Statistics</strong></a>
+            <hr>
+            
+            <!-- Stacked Area Time Graph -->
+            <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto; "></div>
+
             <hr>
 
             <div class="row">
                 <!-- center left-->
                 <div class="col-md-6">
-                    <h3>Tommy Shay</h3>
-          </br> 
-
-                    <div class="btn-group btn-group-justified">
-                        <a href="#" class="btn btn-primary col-sm-4">
-                            <i class="glyphicon glyphicon-plus"></i>
-                            <br> Student Solutions
-                        </a>
-                        <a href="#" class="btn btn-primary col-sm-4">
-                            <i class="glyphicon glyphicon-cloud"></i>
-                            <br> Student Information
-                        </a>
-                        <!--<a href="#" class="btn btn-primary col-sm-3">
-                            <i class="glyphicon glyphicon-cog"></i>
-                            <br> Tools
-                        </a>-->
-                        <a href="#" class="btn btn-primary col-sm-4">
-                            <i class="glyphicon glyphicon-question-sign"></i>
-                            <br> Help
-                        </a>
-                    </div>
-
-                    <hr>
 
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -138,7 +86,7 @@
                                     <span class="sr-only">72% Complete</span>
                                 </div>
                             </div>
-                            <small>Attempted</small>
+                            <small>In Progress</small>
                             <div class="progress">
                                 <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
                                     <span class="sr-only">60% Complete (warning)</span>
@@ -171,53 +119,7 @@
                 </div>
                 <!--/col-->
                 <div class="col-md-6">
-                    <!--
-          <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4>Notices</h4></div>
-                        <div class="panel-body">
-                            <p>This is a dashboard-style layout that uses Bootstrap 3. You can use this template as a starting point to create something more unique.</p>
-                            <p>Visit the Bootstrap Playground at <a href="http://bootply.com">Bootply</a> to tweak this layout or discover more useful code snippets.</p>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Visits</th>
-                                    <th>ROI</th>
-                                    <th>Source</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>45</td>
-                                    <td>2.45%</td>
-                                    <td>Direct</td>
-                                </tr>
-                                <tr>
-                                    <td>289</td>
-                                    <td>56.2%</td>
-                                    <td>Referral</td>
-                                </tr>
-                                <tr>
-                                    <td>98</td>
-                                    <td>25%</td>
-                                    <td>Type</td>
-                                </tr>
-                                <tr>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                </tr>
-                                <tr>
-                                    <td>..</td>
-                                    <td>..</td>
-                                    <td>..</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> -->
+                    
                     
           
           
@@ -501,6 +403,16 @@
           });
       });
     </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="statistics.js"></script>
+    <!-- <script src="/js/themes/gray.js"></script>
+    <!--<script>
+        window.onload = function(){
+            var element = document.getElementsByClassName("highcharts-credits");
+            element.parentNode.removeChild(element);
+        };
+    </script>  -->
     
   </body>
 </html>
