@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS Helper</title>
+    
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel='stylesheet' href='css/fullcalendar.css' />
+	<script src='js/jquery.min.js'></script>
+	<script src='js/moment.min.js'></script>
+	<script src='js/fullcalendar.js'></script>
+
+    
+</body>
+
+<div class="loader"></div>
+    <div id="myDiv">
+    <!--HEADER-->
+    <div class="">
+      <div class="">
+        <header id="main-header">
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">CS<span class="logo-dec">Helper</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="index.html">Home</a></li>
+                <li class=""><a href="index.html#feature">About</a></li>
+                <li class=""><a href="teacher.html">Teacher</a></li>
+                <li class=""><a href="">Tutor</a></li>
+                <li class=""><a href="">Student</a></li>
+                <li class="active"><a href="">Statistics</a></li>
+                <li class=""><a href="index.html#contact">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </header>
+
+<!-- /Header -->
+
+<!-- Main -->
+<div id="studentStats">
+	<div class="container-fluid body">
+		<div class="row">
+			<div class="col-sm-3">
+				<!-- Left column -->
+				<a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Menu</strong></a>
+
+				</br>
+				</br>
+				Removed
+			   
+			</div>
+			<!-- /col-3 -->
+			<div class="col-sm-9">
+
+				<a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Class Statistics</strong></a>
+				<hr>
+				
+				<!-- Column Chart -->
+				<div id="columnChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+				<hr>
+
+				<div class="row">
+					<!-- center left-->
+					<div class="col-md-4">
+
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4>Problem Attempts Overview</h4></div>
+							<div class="panel-body">
+								<div id="pie-chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+							</div>
+							<!--/panel-body-->
+						</div>
+						<!--/panel-->
+						
+						
+						
+						<div class="panel panel-default">
+							<div class="panel-heading" style="background-color:#CC6666">
+								<h4>Failed Questions</h4></div>
+							<div class="panel-body">
+								<div class="list-group">
+									<a href="#" class="list-group-item">If Statement</a>
+									<a href="#" class="list-group-item">Literals</a>
+									<a href="#" class="list-group-item">Break Statement</a>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					
+					<!--/col-->
+					<div class="col-md-8">
+
+						<div id="gradeColumnBarChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+					</div>
+					<!--/col-span-6-->
+
+				</div>
+				<!--/row-->
+				
+
+				<hr>  
+			</div>
+			<!--/col-span-9-->
+		</div>
+	</div>
+	<!-- /Main -->
+
+	<footer class="text-center"> </footer>
+
+
+		<!---->
+		<footer id="footer">
+		  <div class="container">
+			<div class="row text-center">
+			  <p>&copy; CSHelper All Rights Reserved.</p>
+			  
+			</div>
+		  </div>
+		</footer>
+		<!---->
+	  </div>
+
+		<script src="js/highcharts.js"></script>
+		<script src="js/exporting.js"></script>
+		<script src="classStatistics.js"></script>
+		<!-- <script src="/js/themes/gray.js"></script>
+		<!--<script>
+			window.onload = function(){
+				var element = document.getElementsByClassName("highcharts-credits");
+				element.parentNode.removeChild(element);
+			};
+		</script>  -->
+		
+
+</div>   
+  </body>
+</html>
