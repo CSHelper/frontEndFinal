@@ -1,3 +1,4 @@
+//Time Graph
 Highcharts.chart('time-graph', {
     chart: {
         type: 'area'
@@ -61,6 +62,47 @@ Highcharts.chart('time-graph', {
 
 
 
+// Pie chart
+Highcharts.chart('pie-chart', {
+	chart: {
+		plotBackgroundColor: null,
+		plotBorderWidth: null,
+		plotShadow: false,
+		type: 'pie'
+	},
+	title: {
+		text: ''
+	},
+	tooltip: {
+		pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	},
+	plotOptions: {
+		pie: {
+			allowPointSelect: true,
+			cursor: 'pointer',
+			dataLabels: {
+				enabled: false
+			},
+			showInLegend: true
+		}
+	},
+	series: [{
+		name: 'Brands',
+		colorByPoint: true,
+		data: [{
+			name: 'In Progress',
+			y: 60
+		}, {
+			name: 'Failed',
+			y: 10,
+			sliced: true,
+			selected: true
+		}, {
+			name: 'Completed',
+			y: 30
+		}]
+	}]
+});
 
 
 
@@ -70,51 +112,55 @@ Highcharts.chart('time-graph', {
 
 
 
-    // Build the chart
-    Highcharts.chart('pie-chart', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: ''
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: false
-                },
-                showInLegend: true
-            }
-        },
-        series: [{
-            name: 'Brands',
-            colorByPoint: true,
-            data: [{
-                name: 'In Progress',
-                y: 60
-            }, {
-                name: 'Failed',
-                y: 10,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'Completed',
-                y: 30
-            }]
-        }]
-    });
 
-	
-	
-	
-	
-	
-	
+
+
+
+//Calendar
+$(document).ready(function() {
+
+	$('#calendar').fullCalendar({
+		// put your options and callbacks here
+		events: [
+			{
+				title: 'Due: Variable Declarations',
+				start: '2017-03-13'
+			},
+			{
+				title: 'Due: Assignments',
+				start: '2017-03-15'
+			},
+			{
+				title: 'Due: Printing Variables',
+				start: '2017-03-27'
+			},
+			{
+				title: 'Due: Keywords',
+				start: '2017-03-29'
+			},
+			
+			
+			
+
+			{
+				title: 'Lesson: Variables',
+				start: '2017-03-06',
+				end: '2017-03-11',
+				allDay: true
+			},
+			{
+				title: 'Lesson: Operators',
+				start: '2017-03-13',
+				end: '2017-03-18',
+				allDay: true
+			},
+			{
+				title: 'Lesson: Decision Making',
+				start: '2017-03-27',
+				end: '2017-04-01',
+				allDay: true
+			}
+		]
+	})
+
+});
