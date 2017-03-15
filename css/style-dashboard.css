@@ -1,0 +1,25 @@
+
+body {
+	background-color: #F7F7F7;
+}
+
+.panel-tile {
+	background-color: white;
+	background: #fff;
+	color: #73879C;
+	width: 100%;
+    padding: 10px 17px;
+    display: inline-block;
+    border: 1px solid #E6E9ED;
+	margin-bottom: 20px;
+}
+
+.panel-header {
+	font-family: sans-serif;
+	display: block;
+    font-size: 1.2em;
+    margin-top: 0.3em;
+    margin-bottom: 0.1em;
+    margin-left: 0;
+    margin-right: 0;
+}
