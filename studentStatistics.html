@@ -9,11 +9,11 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel='stylesheet' href='css/fullcalendar.css' />
+	<link rel='stylesheet' href='css/style-dashboard.css' />
 	<script src='js/jquery.min.js'></script>
 	<script src='js/moment.min.js'></script>
 	<script src='js/fullcalendar.js'></script>
 
-    
 </body>
 
 <div class="loader"></div>
@@ -68,36 +68,39 @@
 				<a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Student Statistics</strong></a>
 				<hr>
 				
-				<!-- Stacked Area Time Graph -->
-				<div id="time-graph" style="min-width: 310px; height: 400px; margin: 0 auto; "></div>
-
-				<hr>
+				<div class="panel-tile">
+					
+					<span class="panel-header">Student Progress</span>
+				
+					<hr>
+					
+					<!-- Stacked Area Time Graph -->
+					<div id="time-graph" style="min-width: 310px; height: 300px; margin: 0 auto; "></div>
+				</div>
 
 				<div class="row">
 					<!-- center left-->
 					<div class="col-md-4">
 
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4>Problem Attempts Overview</h4></div>
-							<div class="panel-body">
-								<div id="pie-chart" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
-							</div>
-							<!--/panel-body-->
-						</div>
-						<!--/panel-->
+						<div class="panel-tile">
+							<span class="panel-header">Problem Attempts Overview</span>
+							
+							<hr>
+							
+							<div id="pie-chart" style="height: 300px; max-width: 600px; margin: 0 auto"></div>
+						</div> <!--/panel-->
 						
 						
 						
-						<div class="panel panel-default">
-							<div class="panel-heading" style="background-color:#CC6666">
-								<h4>Failed Questions</h4></div>
-							<div class="panel-body">
-								<div class="list-group">
-									<a href="#" class="list-group-item">If Statement</a>
-									<a href="#" class="list-group-item">Literals</a>
-									<a href="#" class="list-group-item">Break Statement</a>
-								</div>
+						<div class="panel-tile">
+							<span class="panel-header">Failed Questions</span>
+							
+							<hr>
+
+							<div class="list-group">
+								<a href="#" class="list-group-item">If Statement</a>
+								<a href="#" class="list-group-item">Literals</a>
+								<a href="#" class="list-group-item">Break Statement</a>
 							</div>
 						</div>
 						
@@ -105,20 +108,17 @@
 					
 					<!--/col-->
 					<div class="col-md-8">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4>Assignment Due Dates</h4></div>
-							<div class="panel-body">
-								<div id='calendar'></div>
-							</div>
-							<!--/panel-body-->
+						<div class="panel-tile">
+							<span class="panel-header">Assignment Due Dates</span>
+							
+							<hr>
+							
+							<div id='calendar'></div>
 						</div>
 
-					</div>
-					<!--/col-span-6-->
+					</div><!--/col-span-6-->
 
-				</div>
-				<!--/row-->
+				</div><!--/row-->
 				
 
 				<hr>  
