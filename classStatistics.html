@@ -65,11 +65,11 @@
 			<!-- /col-3 -->
 			<div class="col-sm-9">
 
-				<a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Student Statistics</strong></a>
+				<a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Class Statistics</strong></a>
 				<hr>
 				
-				<!-- Stacked Area Time Graph -->
-				<div id="time-graph" style="min-width: 310px; height: 400px; margin: 0 auto; "></div>
+				<!-- Column Chart -->
+				<div id="columnChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 				<hr>
 
@@ -105,14 +105,8 @@
 					
 					<!--/col-->
 					<div class="col-md-8">
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<h4>Assignment Due Dates</h4></div>
-							<div class="panel-body">
-								<div id='calendar'></div>
-							</div>
-							<!--/panel-body-->
-						</div>
+
+						<div id="gradeColumnBarChart" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 					</div>
 					<!--/col-span-6-->
@@ -145,7 +139,7 @@
 
 		<script src="js/highcharts.js"></script>
 		<script src="js/exporting.js"></script>
-		<script src="studentStatistics.js"></script>
+		<script src="classStatistics.js"></script>
 		<!-- <script src="/js/themes/gray.js"></script>
 		<!--<script>
 			window.onload = function(){

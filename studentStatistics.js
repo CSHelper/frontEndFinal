@@ -121,6 +121,9 @@ $(document).ready(function() {
 
 	$('#calendar').fullCalendar({
 		// put your options and callbacks here
+		
+		schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source',
+		
 		events: [
 			{
 				title: 'Due: Variable Declarations',
