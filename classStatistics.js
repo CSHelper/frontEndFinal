@@ -3,7 +3,7 @@ Highcharts.chart('columnChart', {
         type: 'column'
     },
     title: {
-        text: 'Assignment Progress (Whole Class)'
+        text: ''
     },
     xAxis: {
         categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
@@ -52,7 +52,7 @@ Highcharts.chart('gradeColumnBarChart', {
         type: 'column'
     },
 	title: {
-        text: 'Class Grades (Per Student)'
+        text: ''
     },
     xAxis: {
         categories: [
