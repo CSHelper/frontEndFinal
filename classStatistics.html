@@ -1,147 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CS Helper</title>
-    
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel='stylesheet' href='css/fullcalendar.css' />
-	<link rel='stylesheet' href='css/style-dashboard.css' />
-	<script src='js/jquery.min.js'></script>
-	<script src='js/moment.min.js'></script>
-	<script src='js/fullcalendar.js'></script>
-
-    
-</body>
-
-<div class="loader"></div>
-    <div id="myDiv">
-    <!--HEADER-->
-    <div class="">
-      <div class="">
-        <header id="main-header">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">CS<span class="logo-dec">Helper</span></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right">
-                <li class=""><a href="index.html">Home</a></li>
-                <li class=""><a href="index.html#feature">About</a></li>
-                <li class=""><a href="teacher.html">Teacher</a></li>
-                <li class=""><a href="">Tutor</a></li>
-                <li class=""><a href="">Student</a></li>
-                <li class="active"><a href="">Statistics</a></li>
-                <li class=""><a href="index.html#contact">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        </header>
-
-<!-- /Header -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel='stylesheet' href='css/fullcalendar.css' />
+<link rel='stylesheet' href='css/style-dashboard.css' />
+<script src='js/jquery.min.js'></script>
+<script src='js/moment.min.js'></script>
+<script src='js/fullcalendar.js'></script>
 
 <!-- Main -->
-<div id="studentStats">
-	<div class="container-fluid body">
-		<div class="row">
-			<div class="col-sm-3">
-				<!-- Left column -->
-				<a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Menu</strong></a>
-
-				</br>
-				</br>
-				Removed
-			   
-			</div>
-			<!-- /col-3 -->
-			<div class="col-sm-9">
-
-				<a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Class Statistics</strong></a>
-				<hr>
-				
-				
-				<div class="panel-tile">
-					<span class="panel-header">Assignment Progress
-						<span class="panel-subheader">Whole Class</span>
-					</span>
-					<hr>
-					<!-- Column Chart -->
-					<div id="columnChart" style="height: 300px; margin: 0 auto"></div>
-				</div>
+<div id="classStatistics">
+	<div class="container-fluid">
+	      <a href="#"><strong><i class="glyphicon glyphicon-dashboard"></i> Class Statistics</strong></a>
+	      <hr>
+	      
+	      
+	      <div class="panel-tile">
+		      <span class="panel-header">Assignment Progress
+			      <span class="panel-subheader">Whole Class</span>
+		      </span>
+		      <hr>
+		      <!-- Column Chart -->
+		      <div id="columnChart" style="height: 300px; margin: 0 auto"></div>
+	      </div>
 
 
-				<div class="row">
-					<!-- center left-->
-					<div class="col-md-4">
+	      <div class="row">
+		      <!-- center left-->
+		      <div class="col-md-4">
 
-					
-						<div class="panel-tile">
-							<span class="panel-header">Problem Attempts Overview</span>
-							<hr>
-							<!-- Pie Chart -->
-							<div id="pie-chart" style="height: 300px; max-width: 600px; margin: 0 auto"></div>
-						</div>
-						
+		      
+			      <div class="panel-tile">
+				      <span class="panel-header">Problem Attempts Overview</span>
+				      <hr>
+				      <!-- Pie Chart -->
+				      <div id="pie-chart" style="height: 300px; max-width: 600px; margin: 0 auto"></div>
+			      </div>
+			      
 
-						
-					</div>
-					
-					<!--/col-->
-					<div class="col-md-8">
-						<div class="panel-tile">
-							<span class="panel-header">Class Grades
-								<span class="panel-subheader"></span>
-							</span>
-							<hr>
-							<!-- Grade Column Bar -->
-							<div id="gradeColumnBarChart" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
-						</div>
-						
+			      
+		      </div>
+		      
+		      <!--/col-->
+		      <div class="col-md-8">
+			      <div class="panel-tile">
+				      <span class="panel-header">Class Grades
+					      <span class="panel-subheader"></span>
+				      </span>
+				      <hr>
+				      <!-- Grade Column Bar -->
+				      <div id="gradeColumnBarChart" style="min-width: 310px; height: 300px; margin: 0 auto"></div>
+			      </div>
+			      
 
-					</div>
-					<!--/col-span-6-->
+		      </div>
+		      <!--/col-span-6-->
 
-				</div>
-				<!--/row-->
-				
-
-				<hr>  
-			</div>
-			<!--/col-span-9-->
-		</div>
+	      </div>
+	      <!--/row-->
 	</div>
-	<!-- /Main -->
+</div>
+<!-- /Main -->
 
-	<footer class="text-center"> </footer>
-
-
-		<!---->
-		<footer id="footer">
-		  <div class="container">
-			<div class="row text-center">
-			  <p>&copy; CSHelper All Rights Reserved.</p>
-			  
-			</div>
-		  </div>
-		</footer>
-		<!---->
-	  </div>
-
-		<script src="js/highcharts.js"></script>
-		<script src="js/exporting.js"></script>
-		<script src="classStatistics.js"></script>
-		
-
-</div>   
-  </body>
-</html>
+<script src="js/highcharts.js"></script>
+<script src="js/exporting.js"></script>
+<script src="classStatistics.js"></script>
