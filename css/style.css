@@ -845,5 +845,15 @@ body{
 }
 
 .body {
-    margin-top: 70px;
+    margin-top: 64px;
+}
+
+.menuHover > li > a:hover, .menuHover > li > a:focus{
+    color: transparent;
+    background-color: transparent;
+}
+
+#placeHolder span{
+    margin-top: 15%;
+    font-size: 80px;
 }
