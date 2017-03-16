@@ -4,7 +4,7 @@ Highcharts.chart('time-graph', {
         type: 'area'
     },
     title: {
-        text: 'Student Progress'
+        text: ''
     },
     subtitle: {
         text: ''
