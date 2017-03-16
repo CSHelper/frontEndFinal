@@ -87,7 +87,7 @@ Highcharts.chart('pie-chart', {
 		}
 	},
 	series: [{
-		name: 'Brands',
+		name: 'Problems',
 		colorByPoint: true,
 		data: [{
 			name: 'In Progress',
