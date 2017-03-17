@@ -79,14 +79,14 @@ function loadClassStatistics(){
                 text: 'Number of Students'
             }
         },
-        tooltip: {
-            headerFormat: '<table><tr><td style="color:{series.color};padding:0; font-size: 18px"><span>{point.key} {series.name}',
+        /*tooltip: {
+            headerFormat: '<table><tr><td style="color:{series.color};padding:0; font-size: 18px"><span>{point.key} {series.name}<span> </span>',
            pointFormat: '</span></td>' +
                 '<td style="padding:0"><b>{point.y} students</b></td></tr>',
             footerFormat: '</table>',
             shared: true,
             useHTML: true
-        },
+        },*/
         plotOptions: {
             column: {
                 pointPadding: 0.2,
