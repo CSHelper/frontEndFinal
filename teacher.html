@@ -79,7 +79,7 @@
                         </li>
                         <li><a href="#" style="color: white;"> <span style="color:white">-</span> Alerts</a>
                         </li>
-                        <li><a href="problemCreation.html" style="color: white;"> <span style="color:white">-</span> Problem Creation</a>
+                        <li id="problemCreationButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Problem Creation</a>
                         </li>
                     </ul>
                 </li>
@@ -88,26 +88,31 @@
             <hr>
         </div>
 
-      <div class="col-sm-10">
-        <div class="text-center" id="placeHolder">
-        <h1>
-          <span class="glyphicon glyphicon-th-list"></span><br/>
-          Select an item to view.
-          </h1>
-        </div>
+		<div class="col-sm-10">
+			<div class="text-center" id="placeHolder">
+				<h1>
+				  <span class="glyphicon glyphicon-th-list"></span><br/>
+				  Select an item to view.
+				</h1>
+			</div>
 
-        <div id="statsDivs" style="display:none; height: 100%; width: 100%;">
-          <h1>
-          STUDENT STATS HOMIE
-          </h1>
-        </div>
+			<div id="statsDivs" style="display:none; height: 100%; width: 100%;">
+				<h1>
+				STUDENT STATS HOMIE
+				</h1>
+			</div>
 
-        <div id="classStats" style="display:none;">
-          <h1>
-          CLASS STATS HOMIE
-          </h1>
-        </div>
-       </div>
+			<div id="classStats" style="display:none;">
+				<h1>
+				CLASS STATS HOMIE
+				</h1>
+			</div>
+			<div id="problemCreationDiv" style="display:none;">
+				<h1>
+				CLASS STATS HOMIE
+				</h1>
+			</div>
+		</div>
         
         <div class="col-sm-3 problemsDivs" style="display:none;"> <!-- Section - Topic - Problem Column (Accordion) -->
       <a href="#"><strong><i class="glyphicon glyphicon-list"></i> Choose a Problem</strong></a>
@@ -373,6 +378,7 @@
               studStats.style.display = 'none';
               classStats.style.display = 'none';
               placeHolder.style.display = 'none';
+			  problemCreation.style.display = 'none';
           }
       };
 
@@ -387,6 +393,7 @@
           var atts = document.getElementsByClassName("problemsDivs");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
+		  var problemCreation = document.getElementById('problemCreationDiv');
           if (studStats.style.display == 'none')
           {
               studStats.style.display = 'block';
@@ -394,6 +401,7 @@
               atts[1].style.display = 'none';
               classStats.style.display = 'none';
               placeHolder.style.display = 'none';
+			  problemCreation.style.display = 'none';
               $("#statsDivs").load("studentStatistics.html", function(){
                 loadStudentStatistics();
               });
@@ -411,6 +419,7 @@
           var atts = document.getElementsByClassName("problemsDivs");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
+		  var problemCreation = document.getElementById('problemCreationDiv');
           if(classStats.style.display == 'none')
           {
             classStats.style.display = 'block';
@@ -418,11 +427,32 @@
             atts[0].style.display = 'none';
             atts[1].style.display = 'none';
             placeHolder.style.display = 'none';
+			problemCreation.style.display = 'none';
             $("#classStats").load("classStatistics.html", function(){
               loadClassStatistics();
             }); 
           }
       };
+	  
+	  var problemCreationButton = document.getElementById("problemCreationButton");
+	  problemCreationButton.onclick = function()
+	  {
+		  var studStats = document.getElementById('statsDivs');
+          var atts = document.getElementsByClassName("problemsDivs");
+          var classStats = document.getElementById('classStats');
+          var placeHold = document.getElementById('placeHolder');
+		  var problemCreation = document.getElementById('problemCreationDiv');
+          if(problemCreation.style.display == 'none')
+          {
+			problemCreation.style.display = 'block';
+            classStats.style.display = 'none';
+            studStats.style.display = 'none';
+            atts[0].style.display = 'none';
+            atts[1].style.display = 'none';
+            placeHolder.style.display = 'none';
+            $("#problemCreationDiv").load("problemCreation.html"); 
+          }
+	  };
     </script>
     
   </body>
