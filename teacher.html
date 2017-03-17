@@ -15,9 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel='stylesheet' href='css/fullcalendar.css' />
     <link rel='stylesheet' href='css/style-dashboard.css' />
-    <script src='js/jquery.min.js'></script>
-    <script src='js/moment.min.js'></script>
-    <script src='js/fullcalendar.js'></script>
+
 
   </head>
   <body>
@@ -379,7 +377,7 @@
       };
 
 
-
+	
 
       //shows the student stats divs and removes the other divs
       var studStatsButton = document.getElementById('studentStats');
@@ -399,6 +397,9 @@
               $("#statsDivs").load("studentStatistics.html", function(){
                 loadStudentStatistics();
               });
+			  
+				
+			  
           }
       };
 
