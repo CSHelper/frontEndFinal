@@ -96,22 +96,11 @@
 				</h1>
 			</div>
 
-			<div id="statsDivs" style="display:none; height: 100%; width: 100%;">
-				<h1>
-				STUDENT STATS HOMIE
-				</h1>
-			</div>
+			<div id="statsDivs" style="display:none; height: 100%; width: 100%;"></div>
 
-			<div id="classStats" style="display:none;">
-				<h1>
-				CLASS STATS HOMIE
-				</h1>
-			</div>
-			<div id="problemCreationDiv" style="display:none;">
-				<h1>
-				CLASS STATS HOMIE
-				</h1>
-			</div>
+			<div id="classStats" style="display:none;"></div>
+			
+			<div id="problemCreationDiv" style="display:none;"></div>
 		</div>
         
         <div class="col-sm-3 problemsDivs" style="display:none;"> <!-- Section - Topic - Problem Column (Accordion) -->
@@ -345,6 +334,7 @@
     <script src="js/exporting.js"></script>
     <script src="studentStatistics.js"></script>
     <script src="classStatistics.js"></script>
+	<script src="problemCreation.js"></script>
     <script src="jquery.js"></script>
     <script src="typed.js"></script>
     <script src="teacher.js"></script>
@@ -450,7 +440,9 @@
             atts[0].style.display = 'none';
             atts[1].style.display = 'none';
             placeHolder.style.display = 'none';
-            $("#problemCreationDiv").load("problemCreation.html"); 
+            $("#problemCreationDiv").load("problemCreation.html", function(){
+				initializeFormDivs();
+			}); 
           }
 	  };
     </script>
