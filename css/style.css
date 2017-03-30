@@ -861,7 +861,7 @@ body{
     margin-top: 15%;
     font-size: 80px;
 }
-    .isTableRow {
+/*    .isTableRow {
         display: table;
         height: 100vh;
     }
@@ -869,4 +869,9 @@ body{
         float: none;
         display: table-cell;
         vertical-align: top;
+    }*/
+
+    .test{
+        margin: 0px;
+        padding: 0px;
     }
