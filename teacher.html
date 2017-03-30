@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel='stylesheet' href='css/fullcalendar.css' />
+    <link rel='stylesheet' href='css/style-dashboard.css' />
+
 
   </head>
   <body>
@@ -23,7 +26,7 @@
     <div class="">
       <div class="">
         <header id="main-header">
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav class="navbar navbar-default navbar-fixed-top"  style="height: 8.5vh">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -53,32 +56,30 @@
 
 <!-- Main -->
 <div class="container-fluid body">
-    <div class="row">
-        <div class="col-sm-2">  <!-- Student List Column -->
-            <a href="#"><strong><i class="glyphicon glyphicon-wrench"></i> Menu</strong></a>
+    <div class="row" style="height: 91.5vh">
+        <div class="col-sm-2" style="background-color: #2A3F54; height: 100%">  <!-- Student List Column -->
+            <a href="#" style="color: white;"><strong><i class="glyphicon glyphicon-wrench"></i> Menu</strong></a>
 
             <hr>
 
-            <ul class="nav nav-stacked">
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu">Student List<i class="glyphicon glyphicon-chevron-right"></i></a>
-                    <ul class="nav nav-stacked collapse" id="userMenu">
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Sunny Aroh</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Frank Sanchez</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Tommy Shay</a></li>
-                        <li class="active"> <a href="#"><i class="glyphicon glyphicon glyphicon-user"></i> Nghia Tran</a></li>
+            <ul class="nav nav-stacked menuHover">
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu" style="color: white;">Student List<i class="glyphicon glyphicon-chevron-right"></i></a>
+                    <ul class="nav nav-stacked collapse menuHover" id="userMenu">
+                        <li class="active student"> <a href="#" data-toggle="collapse" data-target="#userOptions" style="color: white;"> <span style="color:white">-</span><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
+                            <ul class="nav nav-stacked collapse menuHover" id="userOptions">
+                                <li class="active" id="problemAttempts"> <a href="#" style="color: white;"> <span style="color:white">---</span> Problem Attempts</a></li>
+                                <li class="active" id="studentStats"> <a href="#" style="color: white;"> <span style="color:white">---</span> Statistics</a></li>
+                            </ul>
                     </ul>
                 </li>
-                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2" style="color: white;"> Reports <i class="glyphicon glyphicon-chevron-right"></i></a>
 
-                    <ul class="nav nav-stacked collapse glyphicon-chevron-down" id="menu2">
-                        <li><a href="#">Information &amp; Statistics</a>
+                    <ul class="nav nav-stacked collapse glyphicon-chevron-down menuHover" id="menu2">
+                        <li id="classStatsButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Class Statistics</a>
                         </li>
-                        <li><a href="#">Class Statistics</a>
+                        <li><a href="#" style="color: white;"> <span style="color:white">-</span> Alerts</a>
                         </li>
-                        <li><a href="#">Alerts</a>
-                        </li>
-                        <li><a href="problemCreation.html">Problem Creation</a>
+                        <li id="problemCreationButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Problem Creation</a>
                         </li>
                     </ul>
                 </li>
@@ -86,35 +87,56 @@
 
             <hr>
         </div>
-        
-        <div class="col-sm-3"> <!-- Section - Topic - Problem Column (Accordion) -->
 
+    <div class="col-sm-10">
+      <div class="text-center" id="placeHolder">
+        <h1>
+          <span class="glyphicon glyphicon-th-list"></span><br/>
+          Select an item to view.
+        </h1>
+      </div>
+
+      <div id="statsDivs" style="display:none; height: 100%; width: 100%;"></div>
+
+      <div id="classStats" style="display:none;"></div>
+      
+      <div id="problemCreationDiv" style="display:none;"></div>
+    </div>
         
+        <div class="col-sm-3 problemsDivs" style="display:none;"> <!-- Section - Topic - Problem Column (Accordion) -->
       <a href="#"><strong><i class="glyphicon glyphicon-list"></i> Choose a Problem</strong></a>
-
-
 
             <hr>
           <div class="form-group" style="background-color: #fff;">
             <label>Select Language:</label>
-            <select class="form-control target" id="language">
+            <select class="form-control" id="language">
+              <option class="specialColor">Java</option>
+              <option>C++</option>
+              <option>C</option>
+              <option>Python</option>
             </select>
             </br>
             </br>
             </br>
             <label>Select Section:</label> <!--Assuming java basics selected-->
-            <select class="form-control section" id="section">
+            <select class="form-control" id="section">
+              <option>Java Basics</option>
+              <option>Conditional Statements</option>
+              <option>Loops</option>
             </select>
             </br>
             </br>
             </br>
             <label>Select Problem:</label> <!--Assuming java basics selected-->
-            <select class="form-control problem" id="problem">
+            <select class="form-control" id="topic">
+              <option>Data Types</option>
+              <option>If Statements</option>
+              <option>Output</option>
             </select>
             
             <hr>
 
-            
+            <button id="showProblems"> go </button>
           </div>
 
 
@@ -127,18 +149,15 @@
                           Java Basics
                       </a>
                       
-
                   </h4>
               </div>
             <div id="collapse1" class="panel-collapse collapse topicCollapse" role="tabpanel" aria-labelledby="headingOne"> <!-- Topic Panel
-
         
           <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
               <i class="more-less glyphicon glyphicon-plus"></i>
               <i class="pull-right glyphicon glyphicon-pencil"></i>
               Data Types
-
             </a>
             
           </h4>
@@ -164,8 +183,6 @@
             </h4>
             
             
-
-
           </div>
           <h4 class="panel-title">
           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
@@ -173,10 +190,7 @@
               <i class="pull-right glyphicon glyphicon-pencil"></i>
               If Statement
             </a>
-
           </h4>
-
-
           <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
               <i class="more-less glyphicon glyphicon-plus"></i>
@@ -185,8 +199,6 @@
             </a>
           </h4>
               </div>
-
-
               <div class="panel-heading sectionCollapse" role="tab" id="sectionCollapse">
                   <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse98" aria-expanded="true" aria-controls="collapse98">
@@ -211,11 +223,9 @@
           </div>-->
           
         </div>
-        
 
 
-
-      <div class="col-sm-7"> <!-- Problem / Attempt Column -->
+      <div class="col-sm-7 problemsDivs" style="display:none;"> <!-- Problem / Attempt Column -->
       <a href="#"><strong><i class="glyphicon glyphicon-education"></i> Problem and Student Attempts</strong></a>
 
             <hr>
@@ -284,7 +294,7 @@
       
         </div>
     </div>
-    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    <!--<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>-->
 </div>
 
       <!-- END BODY -->  
@@ -293,14 +303,14 @@
 
     <!---->
     <!---->
-    <footer id="footer">
+<!--     <footer id="footer">
       <div class="container">
         <div class="row text-center">
           <p>&copy; CSHelper All Rights Reserved.</p>
           
         </div>
       </div>
-    </footer>
+    </footer> -->
     <!---->
   </div>
     <script src="js/jquery.min.js"></script>
@@ -310,10 +320,14 @@
     <script src="js/wow.js"></script>
     <script src="js/jquery.bxslider.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="contactform/contactform.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/exporting.js"></script>
+    <script src="studentStatistics.js"></script>
+    <script src="classStatistics.js"></script>
+  <script src="problemCreation.js"></script>
     <script src="jquery.js"></script>
     <script src="typed.js"></script>
-    <script src="js/teacher.js"></script>
+    <script src="teacher.js"></script>
     <script>
       $(function(){
           $("#typewriter").typed({
@@ -324,10 +338,96 @@
             backDelay: 700,
             contentType: 'html',
             cursorChar: "|",
-
-
           });
       });
+      //shows the student attempt divs and removes the other divs
+      var studentAtts = document.getElementById('problemAttempts');
+      studentAtts.onclick = function() 
+      {
+          var atts = document.getElementsByClassName("problemsDivs");
+          var studStats = document.getElementById('statsDivs');
+          var classStats = document.getElementById('classStats');
+          var placeHold = document.getElementById('placeHolder');
+          if (atts[0].style.display == 'none') 
+          {
+              atts[0].style.display = 'block';
+              atts[1].style.display = 'block';
+              studStats.style.display = 'none';
+              classStats.style.display = 'none';
+              placeHolder.style.display = 'none';
+        problemCreation.style.display = 'none';
+          }
+      };
+  
+      //shows the student stats divs and removes the other divs
+      var studStatsButton = document.getElementById('studentStats');
+      studStatsButton.onclick = function() 
+      {
+          var studStats = document.getElementById('statsDivs');
+          var atts = document.getElementsByClassName("problemsDivs");
+          var classStats = document.getElementById('classStats');
+          var placeHold = document.getElementById('placeHolder');
+      var problemCreation = document.getElementById('problemCreationDiv');
+          if (studStats.style.display == 'none')
+          {
+              studStats.style.display = 'block';
+              atts[0].style.display = 'none';
+              atts[1].style.display = 'none';
+              classStats.style.display = 'none';
+              placeHolder.style.display = 'none';
+        problemCreation.style.display = 'none';
+              $("#statsDivs").load("studentStatistics.html", function(){
+                loadStudentStatistics();
+              });
+        
+        
+        
+          }
+      };
+      //shows full class stats and removes other divs
+      var fullStats = document.getElementById("classStatsButton");
+      fullStats.onclick = function()
+      {
+          var studStats = document.getElementById('statsDivs');
+          var atts = document.getElementsByClassName("problemsDivs");
+          var classStats = document.getElementById('classStats');
+          var placeHold = document.getElementById('placeHolder');
+      var problemCreation = document.getElementById('problemCreationDiv');
+          if(classStats.style.display == 'none')
+          {
+            classStats.style.display = 'block';
+            studStats.style.display = 'none';
+            atts[0].style.display = 'none';
+            atts[1].style.display = 'none';
+            placeHolder.style.display = 'none';
+      problemCreation.style.display = 'none';
+            $("#classStats").load("classStatistics.html", function(){
+              loadClassStatistics();
+            }); 
+          }
+      };
+    
+    var problemCreationButton = document.getElementById("problemCreationButton");
+    problemCreationButton.onclick = function()
+    {
+      var studStats = document.getElementById('statsDivs');
+          var atts = document.getElementsByClassName("problemsDivs");
+          var classStats = document.getElementById('classStats');
+          var placeHold = document.getElementById('placeHolder');
+      var problemCreation = document.getElementById('problemCreationDiv');
+          if(problemCreation.style.display == 'none')
+          {
+      problemCreation.style.display = 'block';
+            classStats.style.display = 'none';
+            studStats.style.display = 'none';
+            atts[0].style.display = 'none';
+            atts[1].style.display = 'none';
+            placeHolder.style.display = 'none';
+            $("#problemCreationDiv").load("problemCreation.html", function(){
+        initializeFormDivs();
+      }); 
+          }
+    };
     </script>
     
   </body>
