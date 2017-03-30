@@ -88,34 +88,28 @@
         </div>
         
         <div class="col-sm-3"> <!-- Section - Topic - Problem Column (Accordion) -->
+
+        
       <a href="#"><strong><i class="glyphicon glyphicon-list"></i> Choose a Problem</strong></a>
+
+
 
             <hr>
           <div class="form-group" style="background-color: #fff;">
             <label>Select Language:</label>
-            <select class="form-control" id="language">
-              <option class="specialColor">Java</option>
-              <option>C++</option>
-              <option>C</option>
-              <option>Python</option>
+            <select class="form-control target" id="language">
             </select>
             </br>
             </br>
             </br>
             <label>Select Section:</label> <!--Assuming java basics selected-->
-            <select class="form-control" id="section">
-              <option>Java Basics</option>
-              <option>Conditional Statements</option>
-              <option>Loops</option>
+            <select class="form-control section" id="section">
             </select>
             </br>
             </br>
             </br>
             <label>Select Problem:</label> <!--Assuming java basics selected-->
-            <select class="form-control" id="topic">
-              <option>Data Types</option>
-              <option>If Statements</option>
-              <option>Output</option>
+            <select class="form-control problem" id="problem">
             </select>
             
             <hr>
@@ -319,6 +313,7 @@
     <script src="contactform/contactform.js"></script>
     <script src="jquery.js"></script>
     <script src="typed.js"></script>
+    <script src="js/teacher.js"></script>
     <script>
       $(function(){
           $("#typewriter").typed({
