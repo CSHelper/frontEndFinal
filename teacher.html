@@ -370,15 +370,14 @@
       studStatsButton.onclick = function() 
       {
           var studStats = document.getElementById('statsDivs');
-          var atts = document.getElementsByClassName("problemsDivs");
+          var atts = document.getElementById("problemAttemptsDiv");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
       var problemCreation = document.getElementById('problemCreationDiv');
           if (studStats.style.display == 'none')
           {
               studStats.style.display = 'block';
-              atts[0].style.display = 'none';
-              atts[1].style.display = 'none';
+              atts.style.display = 'none';
               classStats.style.display = 'none';
               placeHolder.style.display = 'none';
         problemCreation.style.display = 'none';
@@ -395,7 +394,7 @@
       fullStats.onclick = function()
       {
           var studStats = document.getElementById('statsDivs');
-          var atts = document.getElementsByClassName("problemsDivs");
+          var atts = document.getElementById("problemAttemptsDiv");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
       var problemCreation = document.getElementById('problemCreationDiv');
@@ -403,8 +402,8 @@
           {
             classStats.style.display = 'block';
             studStats.style.display = 'none';
-            atts[0].style.display = 'none';
-            atts[1].style.display = 'none';
+            
+            atts.style.display = 'none';
             placeHolder.style.display = 'none';
       problemCreation.style.display = 'none';
             $("#classStats").load("classStatistics.html", function(){
@@ -417,7 +416,7 @@
     problemCreationButton.onclick = function()
     {
       var studStats = document.getElementById('statsDivs');
-          var atts = document.getElementsByClassName("problemsDivs");
+          var atts = document.getElementsByClassName("problemAttemptsDiv");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
       var problemCreation = document.getElementById('problemCreationDiv');
