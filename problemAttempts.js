@@ -46,6 +46,18 @@ var result =
 				{
 					name: "Java Hello World",
 					value: "javahelloworld"
+				},
+				{
+					name: "Addition",
+					value: "javaaddition"
+				},
+				{
+					name: "Subtraction",
+					value: "javasubtraction"
+				},
+				{
+					name: "Multiplication",
+					value: "javamultiplication"
 				}
 			]
 		}, //close first array object
@@ -58,16 +70,43 @@ var result =
 				{
 					name: "If Statements",
 					value: "javaifstatement"
+				},
+				{
+					name: "Else",
+					value: "javaelse"
+				},
+				{
+					name: "Else If",
+					value: "javaelseif"
 				}
 			]
 
-		} //close array object 2
+		}, //close array object 2
+		/*open array object 3 - Looping Structures */
+		{
+			name: "Looping Structures", 
+			value: "javaloopingstructures",
+			problems: [
+				{
+					name: "For Loop",
+					value: "javafor"
+				},
+				{
+					name: "While Loop",
+					value: "javwhile"
+				},
+				{
+					name: "Do While Loop",
+					value: "javadowhile"
+				}
+			]
 
+		}
 		] //section close
  
 	},
 	/* new language object */
-	{ 
+	{ 			
 		name: "C++", 
 		section: [
 		{

@@ -44,8 +44,12 @@ var result =
 			/* Problems will give you the ability to pick between all the problems with your specified Language / Section */
 			problems: [
 				{
-					name: "Java Hello World",
+					name: "Java Test World",
 					value: "javahelloworld"
+				},
+				{
+					name: "Java Adder",
+					value: "javaadder"
 				}
 			]
 		}, //close first array object
