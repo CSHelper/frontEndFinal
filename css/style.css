@@ -848,6 +848,10 @@ body{
     margin-top: 64px;
 }
 
+.menuHover > li{
+    width: 200px;
+}
+
 .menuHover > li > a:hover, .menuHover > li > a:focus{
     color: transparent;
     background-color: transparent;
@@ -857,3 +861,12 @@ body{
     margin-top: 15%;
     font-size: 80px;
 }
+    .isTableRow {
+        display: table;
+        height: 100vh;
+    }
+    .isTableRow [class*="col-"] {
+        float: none;
+        display: table-cell;
+        vertical-align: top;
+    }
