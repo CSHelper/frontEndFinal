@@ -88,20 +88,22 @@
             <hr>
         </div>
 
-		<div class="col-sm-10">
-			<div class="text-center" id="placeHolder">
-				<h1>
-				  <span class="glyphicon glyphicon-th-list"></span><br/>
-				  Select an item to view.
-				</h1>
-			</div>
+    <div class="col-sm-10">
+      <div class="text-center" id="placeHolder">
+        <h1>
+          <span class="glyphicon glyphicon-th-list"></span><br/>
+          Select an item to view.
+        </h1>
+      </div>
 
-			<div id="statsDivs" style="display:none; height: 100%; width: 100%;"></div>
+      <div id="statsDivs" style="display:none; height: 100%; width: 100%;"></div>
 
-			<div id="classStats" style="display:none;"></div>
-			
-			<div id="problemCreationDiv" style="display:none;"></div>
-		</div>
+      <div id="classStats" style="display:none;"></div>
+      
+      <div id="problemCreationDiv" style="display:none;"></div>
+
+      <div id="problemAttemptsDiv" style="display:none;"></div>
+    </div>
         
         <div class="col-sm-3 problemsDivs" style="display:none;"> <!-- Section - Topic - Problem Column (Accordion) -->
       <a href="#"><strong><i class="glyphicon glyphicon-list"></i> Choose a Problem</strong></a>
@@ -149,18 +151,15 @@
                           Java Basics
                       </a>
                       
-
                   </h4>
               </div>
             <div id="collapse1" class="panel-collapse collapse topicCollapse" role="tabpanel" aria-labelledby="headingOne"> <!-- Topic Panel
-
         
           <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
               <i class="more-less glyphicon glyphicon-plus"></i>
               <i class="pull-right glyphicon glyphicon-pencil"></i>
               Data Types
-
             </a>
             
           </h4>
@@ -186,8 +185,6 @@
             </h4>
             
             
-
-
           </div>
           <h4 class="panel-title">
           <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
@@ -195,10 +192,7 @@
               <i class="pull-right glyphicon glyphicon-pencil"></i>
               If Statement
             </a>
-
           </h4>
-
-
           <h4 class="panel-title">
             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="true" aria-controls="collapse6">
               <i class="more-less glyphicon glyphicon-plus"></i>
@@ -207,8 +201,6 @@
             </a>
           </h4>
               </div>
-
-
               <div class="panel-heading sectionCollapse" role="tab" id="sectionCollapse">
                   <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse98" aria-expanded="true" aria-controls="collapse98">
@@ -334,10 +326,11 @@
     <script src="js/exporting.js"></script>
     <script src="studentStatistics.js"></script>
     <script src="classStatistics.js"></script>
-	<script src="problemCreation.js"></script>
+  <script src="problemCreation.js"></script>
     <script src="jquery.js"></script>
     <script src="typed.js"></script>
     <script src="teacher.js"></script>
+    <script src="problemAttempts.js"></script>
     <script>
       $(function(){
           $("#typewriter").typed({
@@ -348,33 +341,30 @@
             backDelay: 700,
             contentType: 'html',
             cursorChar: "|",
-
-
           });
       });
-
       //shows the student attempt divs and removes the other divs
       var studentAtts = document.getElementById('problemAttempts');
       studentAtts.onclick = function() 
       {
-          var atts = document.getElementsByClassName("problemsDivs");
+          var atts = document.getElementById("problemAttemptsDiv");
           var studStats = document.getElementById('statsDivs');
           var classStats = document.getElementById('classStats');
+          var problemCreation = document.getElementById('problemCreationDiv');
           var placeHold = document.getElementById('placeHolder');
-          if (atts[0].style.display == 'none') 
+          if (atts.style.display == 'none') 
           {
-              atts[0].style.display = 'block';
-              atts[1].style.display = 'block';
+              atts.style.display = 'block';
               studStats.style.display = 'none';
               classStats.style.display = 'none';
               placeHolder.style.display = 'none';
-			  problemCreation.style.display = 'none';
+              problemCreation.style.display = 'none';
+              $("#problemAttemptsDiv").load("problemAttempts.html", function(){
+                loadProblems();
+              });
           }
       };
-
-
-	
-
+  
       //shows the student stats divs and removes the other divs
       var studStatsButton = document.getElementById('studentStats');
       studStatsButton.onclick = function() 
@@ -383,7 +373,7 @@
           var atts = document.getElementsByClassName("problemsDivs");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
-		  var problemCreation = document.getElementById('problemCreationDiv');
+      var problemCreation = document.getElementById('problemCreationDiv');
           if (studStats.style.display == 'none')
           {
               studStats.style.display = 'block';
@@ -391,16 +381,15 @@
               atts[1].style.display = 'none';
               classStats.style.display = 'none';
               placeHolder.style.display = 'none';
-			  problemCreation.style.display = 'none';
+        problemCreation.style.display = 'none';
               $("#statsDivs").load("studentStatistics.html", function(){
                 loadStudentStatistics();
               });
-			  
-				
-			  
+        
+        
+        
           }
       };
-
       //shows full class stats and removes other divs
       var fullStats = document.getElementById("classStatsButton");
       fullStats.onclick = function()
@@ -409,7 +398,7 @@
           var atts = document.getElementsByClassName("problemsDivs");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
-		  var problemCreation = document.getElementById('problemCreationDiv');
+      var problemCreation = document.getElementById('problemCreationDiv');
           if(classStats.style.display == 'none')
           {
             classStats.style.display = 'block';
@@ -417,34 +406,34 @@
             atts[0].style.display = 'none';
             atts[1].style.display = 'none';
             placeHolder.style.display = 'none';
-			problemCreation.style.display = 'none';
+      problemCreation.style.display = 'none';
             $("#classStats").load("classStatistics.html", function(){
               loadClassStatistics();
             }); 
           }
       };
-	  
-	  var problemCreationButton = document.getElementById("problemCreationButton");
-	  problemCreationButton.onclick = function()
-	  {
-		  var studStats = document.getElementById('statsDivs');
+    
+    var problemCreationButton = document.getElementById("problemCreationButton");
+    problemCreationButton.onclick = function()
+    {
+      var studStats = document.getElementById('statsDivs');
           var atts = document.getElementsByClassName("problemsDivs");
           var classStats = document.getElementById('classStats');
           var placeHold = document.getElementById('placeHolder');
-		  var problemCreation = document.getElementById('problemCreationDiv');
+      var problemCreation = document.getElementById('problemCreationDiv');
           if(problemCreation.style.display == 'none')
           {
-			problemCreation.style.display = 'block';
+      problemCreation.style.display = 'block';
             classStats.style.display = 'none';
             studStats.style.display = 'none';
             atts[0].style.display = 'none';
             atts[1].style.display = 'none';
             placeHolder.style.display = 'none';
             $("#problemCreationDiv").load("problemCreation.html", function(){
-				initializeFormDivs();
-			}); 
+        initializeFormDivs();
+      }); 
           }
-	  };
+    };
     </script>
     
   </body>
