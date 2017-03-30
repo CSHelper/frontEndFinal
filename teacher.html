@@ -101,6 +101,8 @@
       <div id="classStats" style="display:none;"></div>
       
       <div id="problemCreationDiv" style="display:none;"></div>
+
+      <div id="problemAttemptsDiv" style="display:none;"></div>
     </div>
         
         <div class="col-sm-3 problemsDivs" style="display:none;"> <!-- Section - Topic - Problem Column (Accordion) -->
@@ -328,6 +330,7 @@
     <script src="jquery.js"></script>
     <script src="typed.js"></script>
     <script src="teacher.js"></script>
+    <script src="problemAttempts.js"></script>
     <script>
       $(function(){
           $("#typewriter").typed({
@@ -344,18 +347,21 @@
       var studentAtts = document.getElementById('problemAttempts');
       studentAtts.onclick = function() 
       {
-          var atts = document.getElementsByClassName("problemsDivs");
+          var atts = document.getElementById("problemAttemptsDiv");
           var studStats = document.getElementById('statsDivs');
           var classStats = document.getElementById('classStats');
+          var problemCreation = document.getElementById('problemCreationDiv');
           var placeHold = document.getElementById('placeHolder');
-          if (atts[0].style.display == 'none') 
+          if (atts.style.display == 'none') 
           {
-              atts[0].style.display = 'block';
-              atts[1].style.display = 'block';
+              atts.style.display = 'block';
               studStats.style.display = 'none';
               classStats.style.display = 'none';
               placeHolder.style.display = 'none';
-        problemCreation.style.display = 'none';
+              problemCreation.style.display = 'none';
+              $("#problemAttemptsDiv").load("problemAttempts.html", function(){
+                loadProblems();
+              });
           }
       };
   
