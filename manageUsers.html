@@ -63,19 +63,21 @@
                       <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                   </div>
               </div>
-              <table class="table">
+              <table class="table" id="table1">
                   <thead>
                       <tr class="filters">
                           <th><input type="text" class="form-control" placeholder="#" disabled></th>
                           <th><input type="text" class="form-control" placeholder="First Name" disabled></th>
                           <th><input type="text" class="form-control" placeholder="Last Name" disabled></th>
                           <th><input type="text" class="form-control" placeholder="Email" disabled></th>
-                          <th>                              <select id="selType" class="form-control" disabled="">
-                                <option>User Type</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                              </select></th>
+                          <th>
+                            <select id="selType" class="form-control" disabled="">
+                              <option>User Type</option>
+                              <option value="Student">Student</option>
+                              <option value="Tutor">Tutor</option>
+                              <option value="Teacher">Teacher</option>
+                            </select>
+                          </th>
                       </tr>
                   </thead>
                   <tbody>
@@ -85,14 +87,11 @@
                           <td>Otto</td>
                           <td>mark@otto.com</td>
                           <td> 
-                            <div class="form-group yeet">
-                              <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                              <select id="t" class="form-control yeet">
+                                <option value="Student">Student</option>
+                                <option value="Tutor">Tutor</option>
+                                <option value="Teacher">Teacher</option>
                               </select>
-                            </div>
                           </td>
                       </tr>
                       <tr>
@@ -101,14 +100,11 @@
                           <td>Thornton</td>
                           <td>jacob@thornton.com</td>
                           <td> 
-                            <div class="form-group yeet">
-                              <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                              <select id="t" class="form-control yeet">
+                                <option value="Student">Student</option>
+                                <option value="Tutor">Tutor</option>
+                                <option value="Teacher">Teacher</option>
                               </select>
-                            </div>
                           </td>
                       </tr>
                       <tr>
@@ -117,14 +113,11 @@
                           <td>the Bird</td>
                           <td>larry@theBird.com</td>
                           <td> 
-                            <div class="form-group yeet">
-                              <select class="form-control">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
+                              <select id="t" class="form-control yeet">
+                                <option value="Student">Student</option>
+                                <option value="Tutor">Tutor</option>
+                                <option value="Teacher">Teacher</option>
                               </select>
-                            </div>
                           </td>
                       </tr>
                   </tbody>
@@ -161,15 +154,16 @@
     */
     $(document).ready(function(){
         $('.filterable .btn-filter').click(function(){
-            document.getElementById("selType").disabled=false;
             var $panel = $(this).parents('.filterable'),
             $filters = $panel.find('.filters input'),
             $tbody = $panel.find('.table tbody');
             if ($filters.prop('disabled') == true) {
+                document.getElementById("selType").disabled=false;
                 $filters.prop('disabled', false);
                 $filters.first().focus();
             } else {
                 $filters.val('').prop('disabled', true);
+                document.getElementById("selType").disabled=true;
                 $tbody.find('.no-result').remove();
                 $tbody.find('tr').show();
             }
@@ -202,6 +196,21 @@
             }
         });
     });
+
+    $("#selType").change(function(){
+        // $("#table1").find("tr").each(function(){
+            // if($(this).text() != $("#selType").val()) $(this).hide();
+            // else $(this).show();
+        //     console.log("filter select: " + $("#selType").val());
+        //     console.log("row select: " + $(".yeet").val())
+        // });
+
+        $("#table1").find("tr").each(function(){
+          if($("#t").val() != $("#selType").val()) $(this).hide();
+          else $(this).show();
+        });
+      });
+
     </script>
 
   </body>
