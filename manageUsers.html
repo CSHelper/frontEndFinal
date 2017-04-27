@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <link rel='stylesheet' href='css/manage.css' />
+    <link rel='stylesheet' type="text/css" href="css/manage.css">
 
 
   </head>
@@ -63,7 +63,7 @@
                       <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                   </div>
               </div>
-              <table class="table" id="table1">
+              <table class="table paginated" id="table1">
                   <thead>
                       <tr class="filters">
                           <th><input type="text" class="form-control" placeholder="#" disabled></th>
@@ -87,9 +87,9 @@
                           <td>Otto</td>
                           <td>mark@otto.com</td>
                           <td> 
-                              <select id="t" class="form-control yeet">
+                              <select class="form-control studSel">
                                 <option value="Student">Student</option>
-                                <option value="Tutor">Tutor</option>
+                                <option value="Tutor" selected="">Tutor</option>
                                 <option value="Teacher">Teacher</option>
                               </select>
                           </td>
@@ -100,7 +100,7 @@
                           <td>Thornton</td>
                           <td>jacob@thornton.com</td>
                           <td> 
-                              <select id="t" class="form-control yeet">
+                              <select class="form-control studSel">
                                 <option value="Student">Student</option>
                                 <option value="Tutor">Tutor</option>
                                 <option value="Teacher">Teacher</option>
@@ -113,7 +113,46 @@
                           <td>the Bird</td>
                           <td>larry@theBird.com</td>
                           <td> 
-                              <select id="t" class="form-control yeet">
+                              <select class="form-control studSel">
+                                <option value="Student">Student</option>
+                                <option value="Tutor">Tutor</option>
+                                <option value="Teacher">Teacher</option>
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>4</td>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>larry@theBird.com</td>
+                          <td> 
+                              <select class="form-control studSel">
+                                <option value="Student">Student</option>
+                                <option value="Tutor">Tutor</option>
+                                <option value="Teacher">Teacher</option>
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>5</td>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>larry@theBird.com</td>
+                          <td> 
+                              <select class="form-control studSel">
+                                <option value="Student">Student</option>
+                                <option value="Tutor">Tutor</option>
+                                <option value="Teacher">Teacher</option>
+                              </select>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>6</td>
+                          <td>Larry</td>
+                          <td>the Bird</td>
+                          <td>larry@theBird.com</td>
+                          <td> 
+                              <select class="form-control studSel">
                                 <option value="Student">Student</option>
                                 <option value="Tutor">Tutor</option>
                                 <option value="Teacher">Teacher</option>
@@ -198,18 +237,44 @@
     });
 
     $("#selType").change(function(){
-        // $("#table1").find("tr").each(function(){
-            // if($(this).text() != $("#selType").val()) $(this).hide();
-            // else $(this).show();
-        //     console.log("filter select: " + $("#selType").val());
-        //     console.log("row select: " + $(".yeet").val())
-        // });
-
-        $("#table1").find("tr").each(function(){
-          if($("#t").val() != $("#selType").val()) $(this).hide();
-          else $(this).show();
+      if($("#selType").val() === "User Type"){
+        $('.studSel').each(function(i, obj) {
+          $(this).parent().parent().show();
         });
-      });
+      }
+      else{
+        $('.studSel').each(function(i, obj) {
+          if($(this).val() != $("#selType").val()) $(this).parent().parent().hide();
+          else $(this).parent().parent().show();
+        });
+      }
+    });
+
+
+
+
+    $('table.paginated').each(function() {
+    var currentPage = 0;
+    var numPerPage = 1;
+    var $table = $(this);
+    $table.bind('repaginate', function() {
+        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
+    });
+    $table.trigger('repaginate');
+    var numRows = $table.find('tbody tr').length;
+    var numPages = Math.ceil(numRows / numPerPage);
+    var $pager = $('<div class="pager"></div>');
+    for (var page = 0; page < numPages; page++) {
+        $('<span class="page-number"></span>').text(page + 1).bind('click', {
+            newPage: page
+        }, function(event) {
+            currentPage = event.data['newPage'];
+            $table.trigger('repaginate');
+            $(this).addClass('active').siblings().removeClass('active');
+        }).appendTo($pager).addClass('clickable');
+    }
+    $pager.insertBefore($table).find('span.page-number:first').addClass('active');
+});
 
     </script>
 
