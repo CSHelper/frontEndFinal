@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CS Helper</title>
+    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+    
+    
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel='stylesheet' href='css/fullcalendar.css' />
+    <link rel='stylesheet' href='css/style-dashboard.css' />
+
+
+  </head>
+  <body>
+
+    <div class="loader"></div>
+    <div id="myDiv">
+    <!--HEADER-->
+    <div class="">
+      <div class="">
+        <header id="main-header">
+        <nav class="navbar navbar-default navbar-fixed-top"  >
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">CS<span class="logo-dec">Helper</span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li class=""><a href="index.html">Home</a></li>
+                <li class=""><a href="index.html#feature">About</a></li>
+                <li class="active"><a href="teacher.html">Teacher</a></li>
+                <li class=""><a href="#portfolio">Tutor</a></li>
+                <li class=""><a href="#testimonial">Student</a></li>
+                <li class=""><a href="statistics.html">Statistics</a></li>
+                <li class=""><a href="index.html#contact">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        </header>
+
+      <!-- BODY -->
+
+
+<!-- Main -->
+<div class="container-fluid body">
+    <div class="row" style="height: 100vh">
+        <div class="col-sm-2" style="background-color: #424869; height: 100%">  <!-- Student List Column -->
+            <a href="#" style="color: white;"><strong><i class="glyphicon glyphicon-wrench"></i> Menu</strong></a>
+
+            <hr>
+
+            <ul class="nav nav-stacked menuHover">
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#userMenu" style="color: white;">Students<i class="glyphicon glyphicon-chevron-right"></i></a>
+                    <ul class="nav nav-stacked collapse menuHover" id="userMenu">
+                        <li class="active student" id="students"> <a href="#" data-toggle="collapse" data-target="#userOptions" style="color: white;"> <span style="color:white"></span><i class="glyphicon glyphicon glyphicon-user"></i> Dustin Cox</a></li>
+                            
+                    </ul>
+                </li>
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2" style="color: white;"> Teacher <i class="glyphicon glyphicon-chevron-right"></i></a>
+
+                    <ul class="nav nav-stacked collapse glyphicon-chevron-down menuHover" id="menu2">
+                        <li id="classStatsButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Class Statistics</a>
+                        </li>
+                        <li><a href="#" style="color: white;"> <span style="color:white">-</span> Alerts</a>
+                        </li>
+                        <li id="problemCreationButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Problem Creation</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2" style="color: white;"> Tutor <i class="glyphicon glyphicon-chevron-right"></i></a>
+
+                    <ul class="nav nav-stacked collapse glyphicon-chevron-down menuHover" id="menu2">
+                        <li id="classStatsButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Class Statistics</a>
+                        </li>
+                        <li><a href="#" style="color: white;"> <span style="color:white">-</span> Alerts</a>
+                        </li>
+                        <li id="problemCreationButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Problem Creation</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-header"> <a href="#" data-toggle="collapse" data-target="#menu2" style="color: white;"> Admins <i class="glyphicon glyphicon-chevron-right"></i></a>
+
+                    <ul class="nav nav-stacked collapse glyphicon-chevron-down menuHover" id="menu2">
+                        <li id="classStatsButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Class Statistics</a>
+                        </li>
+                        <li><a href="#" style="color: white;"> <span style="color:white">-</span> Alerts</a>
+                        </li>
+                        <li id="problemCreationButton"><a href="#" style="color: white;"> <span style="color:white">-</span> Problem Creation</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <hr>
+        </div>
+
+    <div class="col-sm-10">
+      <div class="text-center" id="placeHolder">
+        <h1>
+          <span class="glyphicon glyphicon-th-list"></span><br/>
+          Select an item to view.
+        </h1>
+      </div>
+
+      <div id="statsDivs" style="display:none; height: 100%; width: 100%;"></div>
+
+      <div id="classStats" style="display:none;"></div>
+      
+      <div id="problemCreationDiv" style="display:none;"></div>
+
+      <div id="problemAttemptsDiv" style="display:none;"></div>
+    </div>
+        
+        
+
+
+          
+        </div>
+
+
+
+    
+
+      <!-- END BODY -->  
+
+
+
+    <!---->
+    <!---->
+<!--     <footer id="footer">
+      <div class="container">
+        <div class="row text-center">
+          <p>&copy; CSHelper All Rights Reserved.</p>
+          
+        </div>
+      </div>
+    </footer> -->
+    <!---->
+  </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="dist/typed.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/jquery.bxslider.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/exporting.js"></script>
+    <script src="studentStatistics.js"></script>
+    <script src="classStatistics.js"></script>
+  <script src="problemCreation.js"></script>
+    <script src="jquery.js"></script>
+    <script src="typed.js"></script>
+    <script src="teacher.js"></script>
+    <script src="problemAttempts.js"></script>
+    <script>
+      $(function(){
+          $("#typewriter").typed({
+            strings: ["Learn the basics of C,C++, and Java.", "Brush up on your coding skills.", "Challenge yourself and set new goals."],
+            typeSpeed: 100,
+            loop: true,
+            startDelay: 700,
+            backDelay: 700,
+            contentType: 'html',
+            cursorChar: "|",
+          });
+      });
+      //shows the student attempt divs and removes the other divs
+      var studentAtts = document.getElementById('students');
+      studentAtts.onclick = function() 
+      {
+          var atts = document.getElementById("problemAttemptsDiv");
+          var studStats = document.getElementById('statsDivs');
+          var classStats = document.getElementById('classStats');
+          var problemCreation = document.getElementById('problemCreationDiv');
+          var placeHold = document.getElementById('placeHolder');
+          if (atts.style.display == 'none') 
+          {
+              atts.style.display = 'block';
+              studStats.style.display = 'none';
+              classStats.style.display = 'none';
+              placeHolder.style.display = 'none';
+              problemCreation.style.display = 'none';
+              $("#problemAttemptsDiv").load("accountSettings.html", function(){
+                loadProblems();
+              });
+          }
+      };
+  
+      
+    </script>
+    
+  </body>
+</html>

@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CS Helper</title>
-    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
-    
-    
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
-    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-   
-		
-	<!-- script references -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<head>
+		<title>Problem Creation</title>
+	
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">	
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  </head>
-  <!-- header -->
+		<!-- css -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,300|Raleway:300,400,900,700italic,700,300,600">
+		<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/animate.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel='stylesheet' href='css/style-dashboard.css' />
+		<link rel="stylesheet" href="accordion.css" />
+		<link href="css/timeline.css" rel="stylesheet">
+		<link href="css/calendar.css" rel="stylesheet">
+		
+		<!-- script references -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<!--<script src="modernizr.js"></script>-->
+		<script src="js/scripts.js"></script>
+		<script src="accordion.js"></script>
+		
+	</head>
+	<body>
+<!-- header -->
 <div class="loader"></div>
-    <div id="myDiv">
-    <!--HEADER-->
-    <div class="">
-      <div class="">
-        <header id="main-header">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#">CS<span class="logo-dec">Helper</span></a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class=""><a href="#feature">About</a></li>
-                <li class=""><a href="teacher.html">Teacher</a></li>
-                <li class=""><a href="#portfolio">Tutor</a></li>
-                <li class=""><a href="#testimonial">Student</a></li>
-                <li class=""><a href="#blog">Statistics</a></li>
-                <li class=""><a href="#contact">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        </header>
+<header id="main-header">
+	<nav class="navbar navbar-default navbar-fixed-top" >
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">CS<span class="logo-dec">Helper</span></a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li class=""><a href="index.html">Home</a></li>
+					<li class=""><a href="index.html#feature">About</a></li>
+					<li class="active"><a href="teacher.html">Teacher</a></li>
+					<li class=""><a href="#portfolio">Tutor</a></li>
+					<li class=""><a href="#testimonial">Student</a></li>
+					<li class=""><a href="problemCreation.html">Problem Creation</a></li>
+					<li class=""><a href="index.html#contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
 <!-- /Header -->
 
 <!-- Main -->
@@ -73,7 +77,6 @@
 							</br>
 							<select style="height: 154px" multiple class="form-control selectStudents" id="selectStudents">
 								<option>Dustin</option>
-								<option>Sunday</option>
 								<option>Eric</option>
 								<option>Ryan</option>
 								<option>Frank</option>
@@ -110,7 +113,7 @@
 						</br>
 						</br>
 						</br>
-						<label>Select Problem:</label> <!--Assuming java basics selected-->
+						<label>Select Topic:</label> <!--Assuming java basics selected-->
 						<select class="form-control" id="topic">
 							<option>Data Types</option>
 							<option>If Statements</option>
@@ -412,5 +415,5 @@ let counter = 1;
 	}
 </script>
 		
-</body>
+	</body>
 </html>
