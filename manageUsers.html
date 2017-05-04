@@ -60,7 +60,7 @@
               <div class="panel-heading">
                   <h3 class="panel-title">Users</h3>
                   <div class="pull-right">
-                      <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span> Filter</button>
+                      <button class="btn btn-default btn-xs btn-filter" id="filterButton"><span class="glyphicon glyphicon-filter"></span> Filter</button>
                   </div>
               </div>
               <table class="table paginated" id="table1">
@@ -186,12 +186,13 @@
     <script src="typed.js"></script>
     <script src="teacher.js"></script>
     <script src="problemAttempts.js"></script>
-    
     <script>
         /*
     Please consider that the JS part isn't production ready at all, I just code it to show the concept of merging filters and titles together !
     */
+
     $(document).ready(function(){
+
         $('.filterable .btn-filter').click(function(){
             var $panel = $(this).parents('.filterable'),
             $filters = $panel.find('.filters input'),
@@ -234,49 +235,24 @@
                 $table.find('tbody').prepend($('<tr class="no-result text-center"><td colspan="'+ $table.find('.filters th').length +'">No result found</td></tr>'));
             }
         });
-    });
 
-    $("#selType").change(function(){
-      if($("#selType").val() === "User Type"){
-        $('.studSel').each(function(i, obj) {
-          $(this).parent().parent().show();
+
+
+
+        $("#selType").change(function(){
+          if($("#selType").val() === "User Type"){
+            $('.studSel').each(function(i, obj) {
+              $(this).parent().parent().show();
+            });
+          }
+          else{
+            $('.studSel').each(function(i, obj) {
+              if($(this).val() != $("#selType").val()) $(this).parent().parent().hide();
+              else $(this).parent().parent().show();
+            });
+          }
         });
-      }
-      else{
-        $('.studSel').each(function(i, obj) {
-          if($(this).val() != $("#selType").val()) $(this).parent().parent().hide();
-          else $(this).parent().parent().show();
-        });
-      }
     });
-
-
-
-
-    $('table.paginated').each(function() {
-    var currentPage = 0;
-    var numPerPage = 1;
-    var $table = $(this);
-    $table.bind('repaginate', function() {
-        $table.find('tbody tr').hide().slice(currentPage * numPerPage, (currentPage + 1) * numPerPage).show();
-    });
-    $table.trigger('repaginate');
-    var numRows = $table.find('tbody tr').length;
-    var numPages = Math.ceil(numRows / numPerPage);
-    var $pager = $('<div class="pager"></div>');
-    for (var page = 0; page < numPages; page++) {
-        $('<span class="page-number"></span>').text(page + 1).bind('click', {
-            newPage: page
-        }, function(event) {
-            currentPage = event.data['newPage'];
-            $table.trigger('repaginate');
-            $(this).addClass('active').siblings().removeClass('active');
-        }).appendTo($pager).addClass('clickable');
-    }
-    $pager.insertBefore($table).find('span.page-number:first').addClass('active');
-});
-
     </script>
-
   </body>
 </html>
